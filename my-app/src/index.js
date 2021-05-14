@@ -1,27 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-const name = 'my-app';
-const user = {
-  firstName: 'Ritika',
-  lastName: 'Singh'
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64',
+  },
 };
-const element = (
-  <h1>
-    Hello, {formatName(user)} to {name}!
-  </h1>
-);
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-
 ReactDOM.render(
-  // <React.StrictMode>
-  //   <App />,
-  // </React.StrictMode>,
-   element,
+  <React.StrictMode>
+    <App  date={comment.date}
+    text={comment.text}
+    author={comment.author}/>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
